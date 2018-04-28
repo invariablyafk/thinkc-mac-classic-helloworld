@@ -29,3 +29,8 @@ The `join_xattr` command will take the resource forks in `Hello World 2-xattrs` 
 As git normally ignores the _extremely important_ resource forks, preserving them requires running the following command before commiting any changes.
 
 `split_xattr Hello\ World\ 2 Hello\ World\ 2-xattrs`
+
+### Compiling
+
+The Think C project should be intact, but in the event it needs to be recrated: This project includes the `MacTraps` library and the `hello2.c` file. Think C knows `HelloWorld2.π.rsrc` will be part of the `HelloWorld2.π` project, so naming of the project file matters. Selecting `Build application.. ` from the `Project` menu should compile the application from source.
+
