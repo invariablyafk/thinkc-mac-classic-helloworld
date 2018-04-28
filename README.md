@@ -1,4 +1,4 @@
-# Hellow World For Classic Macintoshes in C
+# Hello World For Classic Macintoshes in C
 
 Hello World example using Think C 5.0, for Classic Macintosh System 7. 
 
