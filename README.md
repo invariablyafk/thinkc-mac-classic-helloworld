@@ -34,3 +34,17 @@ As git normally ignores the _extremely important_ resource forks, preserving the
 
 The Think C project should be intact, but in the event it needs to be recrated: This project includes the `MacTraps` library and the `hello2.c` file. Think C knows `HelloWorld2.π.rsrc` will be part of the `HelloWorld2.π` project, so naming of the project file matters. Selecting `Build application.. ` from the `Project` menu should compile the application from source.
 
+
+### To Do -- Store LF Line Endings, convert to CR for Think C?
+
+Correct problems with CR-based line endings using a filter, investigate filters/hooks for running `xbup` tools automagically. 
+
+Possible avenues:
+
+ * https://stackoverflow.com/questions/3284292/can-a-git-hook-automatically-add-files-to-the-commit
+ * https://stackoverflow.com/questions/18329621/storing-git-config-as-part-of-the-repository
+ * https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
+ * https://stackoverflow.com/questions/10491564/git-and-cr-vs-lf-but-not-crlf
+
+
+`git config --local include.path ../.gitconfig`
