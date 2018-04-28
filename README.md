@@ -44,6 +44,7 @@ Possible avenues:
  * https://stackoverflow.com/questions/3284292/can-a-git-hook-automatically-add-files-to-the-commit
  * https://stackoverflow.com/questions/18329621/storing-git-config-as-part-of-the-repository
  * https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
+ * https://stackoverflow.com/questions/10491564/git-and-cr-vs-lf-but-not-crlf
 
 
 `git config --local include.path ../.gitconfig`
