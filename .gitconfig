@@ -1,0 +1,3 @@
+[filter "legacymacconvert"]
+	clean = tr '\\r' '\\n'
+	smudge = tr '\\n' '\\r'

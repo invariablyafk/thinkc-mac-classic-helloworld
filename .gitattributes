@@ -2,7 +2,7 @@
 * text=auto
 
 # Set use of Macintosh Line Endings.
-*.c text eol=cr
+*.c filter=legacymacconvert
 
 # Declare Resource Forks Binary
 *.__@ binary
