@@ -18,11 +18,12 @@ https://github.com/invariablyafk/xbup-macosx-backup-tools
 
 ```
 git clone https://github.com/invariablyafk/thinkc-mac-classic-helloworld.git
-cd thinkc-mac-classic-helloworld.git
+cd thinkc-mac-classic-helloworld
+git config --local include.path ../.gitconfig
 join_xattr Hello\ World\ 2 Hello\ World\ 2-xattrs
 ```
 
-The `join_xattr` command will take the resource forks in `Hello World 2-xattrs` and merge them back into the matching files inside `Hello World 2`. Any swapping of branches or file operations (ie `git checkout`) performed by git should be followed by a subsequent `join_xattr` to merge resource forks.
+The `join_xattr` command will take the resource forks in `Hello World 2-xattrs` and merge them back into the matching files inside `Hello World 2`. Any swapping of branches or file operations (ie `git checkout`) performed by git should be followed by a subsequent `join_xattr` to merge resource forks. The git config command only needs to be run once, and will handle swapping Mac-style CR line endings for Unix-style LF line endings (see below). 
 
 ### Generating the Resource Fork files Before Commits
 
@@ -36,11 +37,11 @@ The Think C project should be intact, but in the event it needs to be recrated: 
 
 ### About Macintosh Line Endings (CR) in Git
 
-Git lacks support for Macintosh-style text files that end only in a carriage return. So this repository stores the files in Unix standard Line-Feed terminated (LF) format. A filter is included to on-the-fly convert from LF to CR at checkout and check in, making this process transparent. Run this command after checking out the repository for the first time:
+Git lacks support for Macintosh-style text files that end in a carriage return with each line. Unix standard is LF, and Windows uses CRLF. This repository stores the files in Unix standard Line-Feed terminated (LF) format. A filter is included to on-the-fly convert from LF to CR at checkout and check in, making this process transparent. Run this command after cloning the repository for the first time:
 
 `git config --local include.path ../.gitconfig`
 
-This will install the filter defined in `.gitconfig` and called from `.gitattributes` into your local repo so that you can ignore the CR/LF compatibility issue. File will appear to you as CR terminated, and will exist in git as LF terminated.
+This will install the filter defined in `.gitconfig` and called from `.gitattributes` into your local copy so that you can ignore the CR/LF compatibility issue. Files will appear to you as CR terminated, and will exist in git as LF terminated.
 
 ### To Do:
 
