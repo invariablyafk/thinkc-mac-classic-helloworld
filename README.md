@@ -34,17 +34,22 @@ As git normally ignores the _extremely important_ resource forks, preserving the
 
 The Think C project should be intact, but in the event it needs to be recrated: This project includes the `MacTraps` library and the `hello2.c` file. Think C knows `HelloWorld2.π.rsrc` will be part of the `HelloWorld2.π` project, so naming of the project file matters. Selecting `Build application.. ` from the `Project` menu should compile the application from source.
 
+### About Macintosh Line Endings (CR) in Git
 
-### To Do -- Store LF Line Endings, convert to CR for Think C?
+Git lacks support for Macintosh-style text files that end only in a carriage return. So this repository stores the files in Unix standard Line-Feed terminated (LF) format. A filter is included to on-the-fly convert from LF to CR at checkout and check in, making this process transparent. Run this command after checking out the repository for the first time:
 
-Correct problems with CR-based line endings using a filter, investigate filters/hooks for running `xbup` tools automagically. 
+`git config --local include.path ../.gitconfig`
+
+This will install the filter defined in `.gitconfig` and called from `.gitattributes` into your local repo so that you can ignore the CR/LF compatibility issue. File will appear to you as CR terminated, and will exist in git as LF terminated.
+
+### To Do:
+
+Investigate filters/hooks for running `xbup` tools automagically. 
 
 Possible avenues:
 
  * https://stackoverflow.com/questions/3284292/can-a-git-hook-automatically-add-files-to-the-commit
- * https://stackoverflow.com/questions/18329621/storing-git-config-as-part-of-the-repository
- * https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
- * https://stackoverflow.com/questions/10491564/git-and-cr-vs-lf-but-not-crlf
 
 
-`git config --local include.path ../.gitconfig`
+
+
